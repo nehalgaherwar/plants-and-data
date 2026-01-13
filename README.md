@@ -33,4 +33,10 @@ It features a hero section, featured plants, interesting plant facts, and a clea
 ---
 
 ## 📂 Project Structure
+beautiful-plants/                            
+│                                                        
+├── index.html # Main HTML file                                  
+├── styles.css # CSS styles                                      
+├── script.js # JavaScript functionality                              
+└── README.md # Project documentatioc                                      
 
