@@ -1,0 +1,447 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #2F4F4F;
+    background: linear-gradient(135deg, #228B22 0%, #32CD32 25%, #ADFF2F 50%, #F0E68C 75%, #DAA520 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    border-bottom: 3px solid #228B22;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: #228B22;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+}
+
+header p {
+    font-size: 1.3rem;
+    color: #556B2F;
+    font-style: italic;
+}
+
+/* Hero section with parallax */
+#hero {
+    background: url('https://via.placeholder.com/1200x600/228B22/FFFFFF?text=Lush+Plant+Landscape') no-repeat center center/cover;
+    background-attachment: fixed;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    transform: translateZ(0);
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(34, 139, 34, 0.7), rgba(50, 205, 50, 0.5));
+    backdrop-filter: blur(2px);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    animation: slideInFromTop 1s ease-out;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    font-weight: 800;
+}
+
+.hero-content p {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#explore-btn {
+    background: linear-gradient(45deg, #FF8C00, #FFA500);
+    color: white;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 20px rgba(255, 140, 0, 0.4);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#explore-btn:hover {
+    background: linear-gradient(45deg, #FFA500, #FF8C00);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 140, 0, 0.6);
+}
+
+/* Plants section */
+#plants {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #F5F5DC 0%, #FFFACD 100%);
+    text-align: center;
+    position: relative;
+}
+
+#plants::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23228B22" opacity="0.1"/></svg>') repeat;
+    pointer-events: none;
+}
+
+#plants h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: #228B22;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.plant-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.plant-card {
+    background: linear-gradient(145deg, #FFFFFF, #F0F8FF);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.plant-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(34, 139, 34, 0.1), rgba(50, 205, 50, 0.1));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 15px;
+}
+
+.plant-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    border-color: #228B22;
+}
+
+.plant-card:hover::before {
+    opacity: 1;
+}
+
+.plant-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.plant-card:hover img {
+    transform: scale(1.1);
+}
+
+.plant-card h3 {
+    padding: 1.5rem 1rem 0.5rem;
+    font-size: 1.8rem;
+    color: #228B22;
+    font-weight: 700;
+}
+
+.plant-card p {
+    padding: 0 1rem 1.5rem;
+    color: #556B2F;
+    font-size: 1rem;
+}
+
+/* Facts section */
+#facts {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #E6F3E6 0%, #C1F0C1 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#facts::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(34, 139, 34, 0.05) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+#facts h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: #228B22;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fact-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.fact-item {
+    background: linear-gradient(145deg, #FFFFFF, #F0FFF0);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-left: 5px solid #228B22;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.fact-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #228B22, #32CD32, #ADFF2F);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.fact-item:hover::before {
+    transform: scaleX(1);
+}
+
+.fact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.fact-item h4 {
+    color: #FF8C00;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #228B22 0%, #32CD32 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .hero-content h2 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.5rem;
+    }
+    
+    #plants h2, #facts h2 {
+        font-size: 2.5rem;
+    }
+    
+    .plant-grid, .fact-list {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    header p {
+        font-size: 1.1rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    #explore-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+    
+    #plants, #facts {
+        padding: 3rem 1rem;
+    }
+    
+    #plants h2, #facts h2 {
+        font-size: 2rem;
+    }
+    
+    .plant-grid, .fact-list {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .plant-card, .fact-item {
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1.5rem;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    #hero {
+        height: 50vh;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    #explore-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .plant-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .plant-card p {
+        font-size: 0.9rem;
+    }
+    
+    .fact-item {
+        padding: 2rem;
+    }
+    
+    .fact-item h4 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInFromTop {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.plant-card {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.fact-item {
+    animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+#explore-btn {
+    animation: pulse 2s infinite;
+}
+
+/* Scroll animations */
+@keyframes slideInFromLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.plant-card:nth-child(odd) {
+    animation: slideInFromLeft 0.8s ease-out;
+}
+
+.plant-card:nth-child(even) {
+    animation: slideInFromRight 0.8s ease-out;
+}
