@@ -40,3 +40,37 @@ beautiful-plants/
 ├── script.js # JavaScript functionality                              
 └── README.md # Project documentatioc                                      
 
+---
+
+## ▶️ How to Run the Project
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/beautiful-plants.git
+Navigate to the project folder:
+
+bash
+Copy code
+cd beautiful-plants
+Open index.html in your browser.
+
+
+A welcoming header
+
+A hero section encouraging exploration
+
+Featured plants like Sunflower, Rose, and Fern
+
+Interesting plant facts for users
+
+🎯 Future Improvements
+Add more plant categories 🌳
+
+Include animations and transitions ✨
+
+Make it fully mobile-optimized 📱
+
+Add a contact or newsletter section 📩
+
+🤝 Contributing
+Contributions are welcome!
